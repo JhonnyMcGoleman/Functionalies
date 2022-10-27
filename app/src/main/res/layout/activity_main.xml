@@ -41,9 +41,9 @@
         android:text="Login"
         android:layout_margin="8dp"
         app:layout_constraintTop_toBottomOf="@id/password"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rigide"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.35">
+        >
     </Button>
     <Button
         android:layout_width="wrap_content"
@@ -51,7 +51,7 @@
         android:text="Cancel"
         android:id="@+id/cancel"
         android:layout_marginLeft="8dp"
-        app:layout_constraintStart_toEndOf="@id/ok"
+        app:layout_constraintStart_toEndOf="@id/leftguide"
         app:layout_constraintTop_toTopOf="@id/ok">
     </Button>
 
@@ -64,4 +64,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_microphone" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftguide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20">
+    </androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rigide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80">
+    </androidx.constraintlayout.widget.Guideline>
 </androidx.constraintlayout.widget.ConstraintLayout>
