@@ -1,26 +1,36 @@
 package com.example.functionalies;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.View;
+import android.content.Intent;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.example.functionalies.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
-    private ActivityMainBinding binding;
+    TextView link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
+        link=findViewById(R.id.link);
 
+        link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                enviar();
+                link.setTextColor(getResources().getColor(R.color.dark_blue));
+
+            }
+        });
+
+
+    }
+    public void enviar(){
+        Intent intent=new Intent(this,MainActivity2.class);
+        startActivity(intent);
     }
 
 }

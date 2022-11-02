@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    android:background="@color/blue">
+
+    <Button
+        android:id="@+id/Login"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@id/password"
+        style="@style/but_login"></Button>
+    <Button
+        android:text="Cancel"
+        android:id="@+id/cancel"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintStart_toEndOf="@id/leftguide"
+        app:layout_constraintTop_toTopOf="@id/Login"
+        style="@style/but_can">
+    </Button>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="133dp"
+        android:layout_height="156dp"
+        app:layout_constraintBottom_toTopOf="@+id/texinputuser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447"
+        app:srcCompat="@drawable/ic_microphone" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftguide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20">
+    </androidx.constraintlayout.widget.Guideline>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rigide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80">
+    </androidx.constraintlayout.widget.Guideline>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/texinputuser"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rigide"
+        app:layout_constraintStart_toStartOf="@+id/leftguide"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/user_small">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"></EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/texinputuser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/lock_small"
+        android:id="@+id/password">
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="password"
+            android:layout_height="wrap_content"></EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="200dp"
+        android:textSize="16dp"
+        android:id="@+id/link"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_height="40dp"
+        android:text="Do you have an account?"
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/cancel"></TextView>
+</androidx.constraintlayout.widget.ConstraintLayout>
